@@ -1,5 +1,25 @@
 .header {
     position: relative;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media screen and (max-width: 767px) {
+        padding-left: 31px;
+        padding-right: 31px;
+        max-width: 480px;
+    }
+
+    @media screen and (min-width: 768px) {
+        padding-left: 39px;
+        padding-right: 39px;
+        max-width: 768px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        padding-left: 55px;
+        padding-right: 55px;
+        max-width: 1200px;
+    }
 }
 
 .main {
@@ -7,33 +27,25 @@
     justify-content: space-between;
     padding-top: 40px;
 
-    @media screen and (max-width: 767px) {
-        padding-left: 16px;
-        padding-right: 16px;
-        
-    }
-
-    @media screen and (min-width: 768px) {
-        padding-top: 32px;
-        /*justify-content: space-evenly;*/
-
-    }
     
 }
 
 .logo {
-    /*margin-right: 30px;*/
     z-index: 1;
+    fill: $header-title-color;
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
+}
 
+.logo-sidebar {
     @media screen and (max-width: 767px) {
-        fill: $header-title-color;
+        display: none;
     }
 
     @media screen and (min-width: 768px) {
-        margin-left: 11px;
-        fill: $header-social-color;
+        margin: 32px 10.5px;
     }
-    
 }
 
 .menu-button {
@@ -96,8 +108,6 @@
             background-color: $header-title-color;
             box-shadow: -4px 0px 8px rgba(0, 0, 0, 0.04), -2px 0px 4px rgba(0, 0, 0, 0.08), -1px 0px 3px rgba(0, 0, 0, 0.16);
         
-            /*transform: translateX(-100%);
-            transition: transform 500ms linear;*/
         }
 
         @media screen and (min-width: 768px) {
@@ -109,6 +119,7 @@
 .header-list {
     @media screen and (min-width: 768px) {
         display: flex;
+        margin-left: 54px;
     }
 }
 
@@ -120,9 +131,8 @@
 
     @media screen and (min-width: 768px) {
         display: flex;
-        margin-left: 24px;
+        margin-right: 47px;
         padding-top: 12px;
-        
     }
 }
 
@@ -138,7 +148,7 @@
     }
     
     @media screen and (min-width: 768px) {
-        margin-right: 47px;
+        /*margin-right: 47px;*/
         font-size: 12px;
         line-height: 1.33;
     }
@@ -151,7 +161,17 @@
         @media screen and (min-width: 768px) {
             margin-right: 24px;
         }
+
+        @media screen and (min-width: 1200px) {
+            margin-right: 40px;
+        }
     }
+
+    /*&:last-child {
+        @media screen and (min-width: 768px) {
+        margin-right: 47px;
+      }
+    }*/
 }
 
 .item .link {
@@ -172,6 +192,7 @@
 .block {
     @media screen and (min-width: 768px) {
         display: flex;
+        margin-left: 47px;
         /*margin-right: auto;
         margin-bottom: 156px;*/
         z-index: 1;

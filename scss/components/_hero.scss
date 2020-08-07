@@ -1,14 +1,36 @@
+.hero {
+    margin-left: auto;
+    margin-right: auto;
+    
+    @media screen and (max-width: 767px) {
+        padding-left: 31px;
+        padding-right: 31px;
+        max-width: 480px;
+    }
+
+    @media screen and (min-width: 768px) {
+        padding-left: 39px;
+        padding-right: 39px;
+        max-width: 768px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        padding-left: 55px;
+        padding-right: 55px;
+        max-width: 1200px;
+    }
+}
+
 .hero-photo {
     position: absolute;
     top: 0;
-    right: 0;
+    left: 0;
     display: block;
-    margin-right: auto;
-    margin-left: auto;
+    background-color: $header-social-color;
     background-position: center;
     background-size: cover;
 
-    @media screen and (max-width: 677px) {
+    @media screen and (max-width: 479px) {
         width: 100%;
         height: 580px;
         background-image: linear-gradient(
@@ -22,8 +44,22 @@
         }
     }
 
+    @media screen and (min-width: 480px) {
+        width: 100%;
+        height: 580px;
+        background-image: linear-gradient(
+            to right,
+            rgba(25, 28, 38, 0.2),
+            rgba(25, 28, 38, 0.2)),
+        url(../images/Header-Tab.jpg);
+        
+        @media (min-resolution: 2dppx) {
+            background-image: url(../images/Header-Tab@2x.jpg);
+        }
+    }
+
     @media screen and (min-width: 678px) {
-        width: 609px;
+        max-width: 100%;
         height: 680px;
         background-image: linear-gradient(
             to right,
@@ -37,6 +73,7 @@
     }
 
     @media screen and (min-width: 1200px) {
+        max-width: 1125px;
         height: 680px;
         background-image: linear-gradient(
             to right,
@@ -57,27 +94,55 @@
     }
 }*/
 
-/*.sidebar-block {
-    
-}*/
+.sidebar-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    width: 90px;
+    height: 680px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 39px;
+    overflow: auto;
+    background-color: #fff;
+    transform: rotate(180deg);
 
-.sidebar-hero {
     @media screen and (max-width: 767px) {
         display: none;
     }
-
-    @media screen and (min-width: 768px) {
-        display: flex;
-        height: 90px;
-        
-    }
 }
 
+.sidebar-hero {
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+    
+    &::before {
+        @media screen and (min-width: 768px) {
+        background-color: #303030;
+        content: "";
+        display: inline-block;
+        height: 1px;
+        vertical-align: middle;
+        width: 60px;
+        margin-bottom: 70px;
+        margin-top: 70px;
+        margin-left: 17px;
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+
+
 .social-hero {
-    display: flex;
+    writing-mode: vertical-rl;
+    margin-left: 38px;
+    margin-bottom: 40px;
     z-index: 1;
-    
-    
 }
 
 .link-hero {
@@ -89,8 +154,12 @@
         line-height: 1.36;
         letter-spacing: 0.2em;
         color: $header-social-color;
-        transform: rotate(-90deg);
-    }
+      }
+
+      &:hover,
+      &:focus {
+          color: $accent-color;
+      }
 }
 
 
@@ -120,7 +189,8 @@
 
 .content {
     @media screen and (max-width: 767px) {
-        padding-top: 208px;
+        padding: 208px 31px 138px;
+
     }
     
     @media screen and (min-width: 768px) {
@@ -147,8 +217,10 @@
         display: inline-block;
         content: "";
         margin-right: 20px;
+        margin-bottom: 3px;
         width: 60px;
         height: 1px;
+        vertical-align: middle;
         background-color: $header-rgba-color;
       }
 }
@@ -195,17 +267,23 @@
     }
 
     @media screen and (min-width: 768px) {
-        display: inline-flex;
-        margin-left: 424px;
+        display: flex;
+        /*margin-left: 510px;*/
+        justify-content: flex-end;
     }
 }
 
 .slider-link {
-    color: $header-title-color;
+    color: $header-rgba-color;
 
     &:not(:last-child) {
         @media screen and (min-width: 768px) {
-            margin-right: 61px; 
+            margin-right: 26px; 
         }
+    }
+
+    &:hover,
+    &:focus {
+        color: $header-title-color;
     }
 }
